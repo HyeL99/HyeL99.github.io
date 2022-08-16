@@ -26,7 +26,7 @@ title: HyeL's Blog                          # the main title
 tagline: A Blog that writes a cording diary and records daily life   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
-  A minimal, responsive, and powerful Jekyll theme for presenting professional writing.
+  HTML, CSS, JS, jQuery, React, Vue,etc.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: 'https://HyeL99.github.io'
@@ -83,7 +83,7 @@ theme_mode:   # [light|dark]
 img_cdn: 'https://raw.githubusercontent.com/cotes2020/chirpy-images/main'
 
 # the avatar on sidebar, support local or CORS resources
-avatar: '/commons/avatar.jpg'
+avatar: '/assets/img/cat.jpg'
 
 # boolean type, the global switch for ToC in posts.
 toc: true
