@@ -23,7 +23,7 @@ timezone: Asia/Seoul
 
 title: HyeL's Blog                          # the main title
 
-tagline: A Blog that writes a cording diary and records daily life   # it will display as the sub-title
+tagline: A Blog that writes a coding diary and records daily life   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
   HTML, CSS, JS, jQuery, React, Vue,etc.
@@ -80,10 +80,10 @@ theme_mode:   # [light|dark]
 # will be added to all image (site avatar & posts' images) paths starting with '/'
 #
 # e.g. 'https://cdn.com'
-img_cdn: 'https://raw.githubusercontent.com/cotes2020/chirpy-images/main'
+img_cdn: #'https://raw.githubusercontent.com/cotes2020/chirpy-images/main'
 
 # the avatar on sidebar, support local or CORS resources
-avatar: '/assets/img/cat.jpg'
+avatar: 'assets/img/cat.jpg'
 
 # boolean type, the global switch for ToC in posts.
 toc: true
