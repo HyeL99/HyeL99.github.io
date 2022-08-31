@@ -12,10 +12,10 @@
   /* Common color */
   --text-color: rgb(175, 176, 177);
   --text-muted-color: rgb(107, 116, 124);
-  --heading-color: #cccccc;
+  --heading-color: #B58A93;
   --blockquote-border-color: rgb(66, 66, 66);
   --blockquote-text-color: rgb(117, 117, 117);
-  --link-color: rgb(138, 180, 248);
+  --link-color: #B58A93;
   --link-underline-color: rgb(82, 108, 150);
   --button-bg: rgb(39, 40, 43);
   --btn-border-color: rgb(63, 65, 68);
@@ -29,9 +29,10 @@
 
   /* Sidebar */
   --sidebar-bg: radial-gradient(circle, #242424 0%, #1d1f27 100%);
-  --sidebar-muted-color: #6d6c6b;
-  --sidebar-active-color: rgb(255 255 255 / 80%);
-  --nav-cursor-color: rgb(183, 182, 182);
+  --sidebar-muted-color: rgba(255,255,255,0.5);
+  --sidebar-active-color: #fff;
+  --nav-cursor-color: #fff;
+  --nav-cursor-color: #fff;
   --sidebar-btn-bg: rgb(117 116 116 / 20%);
 
   /* Topbar */

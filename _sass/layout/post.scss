@@ -25,6 +25,9 @@
 %text-color {
   color: var(--text-color);
 }
+%heading-color{
+  color: var(--heading-color);
+}
 
 h1 + .post-meta {
   span + span::before {
@@ -185,7 +188,7 @@ nav[data-toggle=toc] {
     transition: all 0.3s ease-in-out;
 
     h3 {
-      @extend %text-color;
+      @extend %heading-color;
     }
 
     &:hover {
