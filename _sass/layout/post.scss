@@ -76,9 +76,9 @@ img.preview-img {
     color: var(--link-color);
 
     &:hover {
-      background: #2a408e;
+      background: #75595F;
       color: #fff;
-      border-color: #2a408e;
+      border-color: #75595F;
     }
 
     &.disabled {
@@ -103,6 +103,9 @@ img.preview-img {
       font-size: 0.65rem;
       text-transform: uppercase;
       content: attr(prompt);
+    }
+    &:hover::before {
+      color: #fff;
     }
 
     &:first-child {
