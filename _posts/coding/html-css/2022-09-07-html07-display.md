@@ -2,7 +2,7 @@
 title: HTML 공간 분할
 author: HyeL
 date: 2022-09-07 10:15:00 +0900
-categories: [Coding Diary, HTML/CSS]
+categories: [Coding Diary, HTML/CSS, display, iframe, layout]
 tags: [html, 코딩일지]
 ---
 
@@ -61,35 +61,76 @@ display 속성은 주로 4가지 속성값이 쓰이는데, 태그마다 기본�
     </div>
 
 ## ifram 요소
-    iframe이란 내부 프레임(inline frame)이라는 의미로,
-    iframe요소를 이용하면 어떠한 제한 없이 하나의 HTML 문서 내에서 다른 HTML 문서를 보여줄 수 있으며 동영상도 보여줄 수 있다.
 
-    ```
-    문법
-    <iframe src="삽입할페이지주소"></iframe>
-    ```
+iframe이란 내부 프레임(inline frame)이라는 의미로,<br>
+iframe요소를 이용하면 어떠한 제한 없이 하나의 HTML 문서 내에서 다른 HTML 문서를 보여줄 수 있으며 동영상도 보여줄 수 있다.
 
-    iframe요소는 종료 태그가 존재하며, 명시된 크기로 창의 사이즈가 고정된다.
+```
+문법
+<iframe src="삽입할페이지주소"></iframe>
+```
 
+iframe요소는 종료 태그가 존재하며, 명시된 크기로 창의 사이즈가 고정된다.
+
+```html
+<iframe src="/" style="width:100%; height:300px">
+</iframe>
+```
+
+<div style="background:#eee; padding: 20px; box-sizing: border-box; border-radius: 10px; color: black;">
+    <strong style="display: block; padding-bottom: 20px;">▶ 실행결과</strong>
+    <iframe src="/" style="width:100%; height:300px">
+    </iframe>
+</div>
+
+- ### iframe 요소의 테두리 변경
+
+    iframe 요소는 기본적으로 검정색 테두리(border)를 가진다.
+    이러한 테두리 스타일은 style 속성에서 border 속성을 이용하면 변경할 수 있다.
+    테두리를 설정하고 싶지 않다면 style 속성에서 border 속성값을 none으로 설정하면 된다.
+    
     ```html
-	<iframe src="/css/intro" style="width:100%; height:100px">
+    <iframe src="/" style="width:100%; height:300px; border: 10px solid crimson">
     </iframe>
     ```
 
     <div style="background:#eee; padding: 20px; box-sizing: border-box; border-radius: 10px; color: black;">
         <strong style="display: block; padding-bottom: 20px;">▶ 실행결과</strong>
-        <div id="header" style="background-color:lightgrey; height:100px; text-align:center; line-height:100px;">
-            <p>HEADER 영역</p>
-        </div>
-        <div id="nav" style="background-color:#339999; width:30%; float:left; text-align:center; line-height:240px; padding:30px;">
-            <p style="margin:0; color: #fff;">NAV 영역</p>
-        </div>
-        <div id="section" style="background-color:crimson; width:70%; float:left; padding:30px; line-height:80px;">
-            <p style="margin:0; color: #fff;">SECTION 영역<br>SECTION 영역<br>SECTION 영역</p>
-        </div>
-        <div id="footer" style="background-color:#FFCC00; height:100px; clear:both; text-align:center; line-height:100px;">
-            <p>FOOTER 영역</p>
-        </div>
+        <iframe src="/" style="width:100%; height:300px; border: 10px solid crimson">
+        </iframe>
+    </div>
+
+    ```html
+    <iframe src="/" style="width:100%; height:300px; border: none">
+    </iframe>
+    ```
+
+    <div style="background:#eee; padding: 20px; box-sizing: border-box; border-radius: 10px; color: black;">
+        <strong style="display: block; padding-bottom: 20px;">▶ 실행결과</strong>
+        <iframe src="/" style="width:100%; height:300px; border: none">
+        </iframe>
+    </div>
+
+- ### iframe 요소의 페이지 변경하기
+
+    `<a>`태그를  이용하면 iframe 요소의 최초 페이지를 중간에 변경할 수 있다.
+    `<a>`태그의 target 속성과 iframe 요소의 name 속성을 연결하면, `<a>`태그를 통해 iframe 요소의 페이지를 변경할 수 있다.
+
+    ```html
+    <iframe src="/" name= "frame_target" style="width:100%; height:300px; border: none">
+    </iframe>
+    <a href="/archives" target="frame_target">Go to Arcaives ▶</a>
+    <br>
+    <a href="/" target="frame_target">Go to Home ▶</a>
+    ```
+
+    <div style="background:#eee; padding: 20px; box-sizing: border-box; border-radius: 10px; color: black;">
+        <strong style="display: block; padding-bottom: 20px;">▶ 실행결과</strong>
+        <iframe src="/" name= "frame_target" style="width:100%; height:300px; border: none">
+        </iframe>
+        <a href="/archives" target="frame_target">Go to Arcaives ▶</a>
+        <br>
+        <a href="/" target="frame_target">Go to Home ▶</a>
     </div>
 
 
@@ -185,49 +226,16 @@ HTML에서는 다음과 같은 방법으로 레이아웃을 작성할 수 있다
 
     <table width="100%" style="text-align:center; border:none">
         <tr>
-            <td colspan="2" style="background-color:lightgrey"><h2>Header 영역</h2></td>
+            <td colspan="2" style="background-color:lightgrey"><p>Header 영역</p></td>
         </tr>
         <tr>
-            <td style="background-color:#339999; color:white; width:30%"><h2>Nav 영역</h2></td>
+            <td style="background-color:#339999; color:white; width:30%"><p>Nav 영역</p></td>
             <td style="height:200px; text-align:left; background:crimson; color:#fff;"><p>SECTION 영역<br>SECTION 영역<br>SECTION 영역</p></td>
         </tr>
         <tr>
-            <td colspan="2" style="background-color:#FFCC00"><h2>Footer 영역</h2></td>
+            <td colspan="2" style="background-color:#FFCC00"><p>Footer 영역</p></td>
         </tr>
     </table>
-
-
-
-
-
-```
-문법
-<태그이름 style="속성이름 : 속성값"></태그이름>
-```
-
-```html
-<p style="margin: 0;">style 속성을 이용한 배경색 변경</p>
-```
-
-<div style="background:#eee; padding: 20px; box-sizing: border-box; border-radius: 10px; color: black;">
-    <strong style="display: block; padding-bottom: 20px;">▶ 실행결과</strong>
-</div>
-
-- ### 소제목
-
-    ```
-    문법
-    <태그이름 style="속성이름 : 속성값"></태그이름>
-    ```
-
-    ```html
-    <p style="margin: 0;">style 속성을 이용한 배경색 변경</p>
-    ```
-
-    <div style="background:#eee; padding: 20px; box-sizing: border-box; border-radius: 10px; color: black;">
-        <strong style="display: block; padding-bottom: 20px;">▶ 실행결과</strong>
-    </div>
-
 <br><br>
 
 ## 출처
